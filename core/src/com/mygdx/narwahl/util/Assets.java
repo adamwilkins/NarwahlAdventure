@@ -1,17 +1,42 @@
 package com.mygdx.narwahl.util;
 
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.assets.AssetErrorListener;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Disposable;
 import com.mygdx.narwahl.util.Constants;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 
 public class Assets implements Disposable, AssetErrorListener {
+	public AssetFonts fonts;
+	
+	public class AssetFonts {
+	       public final BitmapFont defaultSmall;
+	       public final BitmapFont defaultNormal;
+	       public final BitmapFont defaultBig;
+	       public AssetFonts () {
+	         // create three fonts using Libgdx's 15px bitmap font
+	         defaultSmall = new BitmapFont(Gdx.files.internal("../desktop/assets-raw/Font/arial-15.fnt"), true);
+	         defaultNormal = new BitmapFont(Gdx.files.internal("../desktop/assets-raw/Font/arial-15.fnt"), true);
+	         defaultBig = new BitmapFont(Gdx.files.internal("../desktop/assets-raw/Font/arial-15.fnt"), true);
+	         // set font sizes
+	         defaultSmall.getData().setScale(0.75f);
+	         defaultNormal.getData().setScale(1.0f);
+	         defaultBig.getData().setScale(2.0f);
+	         // enable linear texture filtering for smooth fonts
+	         defaultSmall.getRegion().getTexture().setFilter(
+	             TextureFilter.Linear, TextureFilter.Linear);
+	         defaultNormal.getRegion().getTexture().setFilter(
+	             TextureFilter.Linear, TextureFilter.Linear);
+	         defaultBig.getRegion().getTexture().setFilter(
+	             TextureFilter.Linear, TextureFilter.Linear);
+	} }
 
     public static final String TAG = Assets.class.getName();
     public static final Assets instance = new Assets();
@@ -42,6 +67,7 @@ public class Assets implements Disposable, AssetErrorListener {
       for (Texture t : atlas.getTextures()) {
            t.setFilter(TextureFilter.Linear, TextureFilter.Linear);
       }
+      fonts = new AssetFonts();
       // create game resource objects
       bunny = new AssetNarwahl(atlas);
       rock = new AssetRock(atlas);
@@ -52,6 +78,9 @@ public class Assets implements Disposable, AssetErrorListener {
   @Override
   public void dispose () {
     assetManager.dispose();
+    fonts.defaultSmall.dispose();
+    fonts.defaultNormal.dispose();
+    fonts.defaultBig.dispose();
   }
   public void error (String filename, Class type,
     Throwable throwable) {
