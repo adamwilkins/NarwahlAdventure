@@ -46,17 +46,6 @@ public class WorldRenderer implements Disposable {
       batch.end();
 }
   
-  private void renderGuiExtraLive (SpriteBatch batch) {
-      float x = cameraGUI.viewportWidth - 50 -
-  Constants.LIVES_START * 50;
-      float y = -15;
-      for (int i = 0; i < Constants.LIVES_START; i++) {
-        if (worldController.lives <= i)
-          batch.setColor(0.5f, 0.5f, 0.5f, 0.5f);
-        batch.draw(Assets.instance.bunny.head,
-            x + i * 50, y, 50, 50, 120, 100, 0.35f, -0.35f, 0);
-        batch.setColor(1, 1, 1, 1);
-} }
   
   private void renderGui (SpriteBatch batch) {
       batch.setProjectionMatrix(cameraGUI.combined);
@@ -64,8 +53,6 @@ public class WorldRenderer implements Disposable {
       // draw collected gold coins icon + text
       // (anchored to top left edge)
       renderGuiScore(batch);
-      // draw extra lives icon + text (anchored to top right edge)
-      renderGuiExtraLive(batch);
       // draw FPS text (anchored to bottom right edge)
       batch.end();
 }
