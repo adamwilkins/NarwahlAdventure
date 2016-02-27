@@ -4,6 +4,8 @@ buildscript {
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
     dependencies {
+    def gdxVersion = '1.9.2'
+
     }
 }
 
@@ -30,6 +32,7 @@ allprojects {
 
 project(":desktop") {
     apply plugin: "java"
+    
 
 
     dependencies {
@@ -38,6 +41,7 @@ project(":desktop") {
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         compile "com.badlogicgames.gdx:gdx-controllers-desktop:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-controllers-platform:$gdxVersion:natives-desktop"
+        compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
     }
 }
 

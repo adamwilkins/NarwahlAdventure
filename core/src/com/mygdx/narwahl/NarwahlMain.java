@@ -2,6 +2,7 @@ package com.mygdx.narwahl;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 
 
@@ -10,6 +11,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.narwahl.util.Assets;
 
 public class NarwahlMain extends ApplicationAdapter {
 	private static final String TAG = NarwahlMain.class.getName();
@@ -20,11 +22,14 @@ public class NarwahlMain extends ApplicationAdapter {
 	@Override public void create () {
 		// Set Libgdx log level to DEBUG
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
+		Assets.instance.init(new AssetManager());
          // Initialize controller and renderer
          worldController = new WorldController();
          worldRenderer = new WorldRenderer(worldController);
          // Game world is active on start
          paused = false;
+         
+
      }
      
 	@Override public void render() {
@@ -57,5 +62,6 @@ public class NarwahlMain extends ApplicationAdapter {
 
      @Override public void dispose() {
     	 worldRenderer.dispose();
+    	 Assets.instance.dispose();
      }
 }
