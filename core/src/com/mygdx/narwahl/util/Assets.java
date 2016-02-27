@@ -67,7 +67,7 @@ asset.fileName + "'", (Exception)throwable);
    public class AssetNarwahl {
        public final AtlasRegion head;
        public AssetNarwahl (TextureAtlas atlas) {
-           head = atlas.findRegion("OriginalNarwhal");
+           head = atlas.findRegion("AngryNarwhal");
    }
  }
    public class AssetRock {
@@ -82,13 +82,13 @@ asset.fileName + "'", (Exception)throwable);
    public class AssetGoldCoin {
        public final AtlasRegion goldCoin;
        public AssetGoldCoin (TextureAtlas atlas) {
-           goldCoin = atlas.findRegion("Special");
+           goldCoin = atlas.findRegion("PokemonBall");
 }
 }
    public class AssetFeather {
        public final AtlasRegion feather;
        public AssetFeather (TextureAtlas atlas) {
-           feather = atlas.findRegion("star");
+           feather = atlas.findRegion("starfish");
    } }
 
 

@@ -1,62 +1,41 @@
 
 narwahl.png
-size: 1024,1024
+size: 1024,512
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-NarwhalKneesBentLeft
+AngryNarwhal
   rotate: false
-  xy: 461, 625
-  size: 297, 377
-  orig: 297, 377
+  xy: 427, 98
+  size: 207, 335
+  orig: 207, 335
   offset: 0, 0
   index: -1
-NarwhalKneesBentRight
+PokemonBall
   rotate: false
-  xy: 2, 193
-  size: 312, 367
-  orig: 312, 367
-  offset: 0, 0
-  index: -1
-OriginalNarwhal
-  rotate: false
-  xy: 613, 271
-  size: 308, 352
-  orig: 308, 352
-  offset: 0, 0
-  index: -1
-OriginalNarwhalFlipped
-  rotate: false
-  xy: 316, 204
-  size: 295, 356
-  orig: 295, 356
-  offset: 0, 0
-  index: -1
-Special
-  rotate: false
-  xy: 2, 2
-  size: 206, 189
-  orig: 206, 189
+  xy: 688, 310
+  size: 129, 123
+  orig: 129, 123
   offset: 0, 0
   index: -1
 grass
   rotate: false
-  xy: 821, 789
-  size: 38, 213
-  orig: 38, 213
+  xy: 819, 226
+  size: 40, 207
+  orig: 40, 207
   offset: 0, 0
   index: -1
 grass copy
   rotate: false
-  xy: 760, 786
-  size: 59, 216
-  orig: 59, 216
+  xy: 636, 217
+  size: 50, 216
+  orig: 50, 216
   offset: 0, 0
   index: -1
-star
+starfish
   rotate: false
-  xy: 2, 562
-  size: 457, 440
-  orig: 457, 440
+  xy: 2, 2
+  size: 423, 431
+  orig: 423, 431
   offset: 0, 0
   index: -1

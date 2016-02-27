@@ -10,7 +10,7 @@ import com.badlogic.gdx.tools.texturepacker.TexturePacker.Settings;
 
 public class DesktopLauncher {
 	private static boolean rebuildAtlas = true;
-    private static boolean drawDebugOutline = true;
+    private static boolean drawDebugOutline = false;
 	
 	public static void main (String[] arg) {
 		 if (rebuildAtlas) {
@@ -20,9 +20,9 @@ public class DesktopLauncher {
              settings.duplicatePadding = false;
              settings.debug = drawDebugOutline;
              TexturePacker.process(settings, "assets-raw/images", "../desktop/assets-raw/atlas", "narwahl");
-		
+		 }
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		new LwjglApplication(new NarwahlMain(), config);
-		 }
+		 
 	}
 }
